@@ -1,0 +1,8 @@
+{
+  "sms.gc.start": "[ServerMemorySweeper] Starting memory cleanup...",
+  "sms.gc.end": "[ServerMemorySweeper] Memory cleanup completed, current system-occupied memory: %sG",
+  "sms.gc.failed": "[ServerMemorySweeper] Memory cleanup failed with cause: %s",
+  "sms.gc.failed.cause.not-gc": "Unnecessary memory cleanup",
+  "sms.gc.failed.cause.is-zgc": "ZGC is enabled.",
+  "sms.gc.failed.cause.not-enabled": "ServerMemorySweeper is not enabled."
+}

@@ -1,4 +1,4 @@
-package cn.crtlprototypestudios.sms.core.util;
+package cn.crtlprototypestudios.sms.core_from_tkisor.util;
 
 import com.sun.management.OperatingSystemMXBean;
 

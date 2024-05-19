@@ -1,4 +1,4 @@
-package cn.crtlprototypestudios.sms.core.config;
+package cn.crtlprototypestudios.sms.core_from_tkisor.config;
 
 import cn.crtlprototypestudios.sms.ServerMemorySweeper;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -15,7 +15,7 @@ public class ModConfig implements ConfigData {
     public void save() {
         AutoConfig.getConfigHolder(ModConfig.class).save();
     }
-    @Comment("Whether to enable MemorySweep.")
+    @Comment("Whether to enable Server Memory Sweeper.")
     public boolean memorySweep = true;
 
     @Comment("""

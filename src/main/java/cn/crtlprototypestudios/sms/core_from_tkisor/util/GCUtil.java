@@ -1,7 +1,7 @@
-package cn.crtlprototypestudios.sms.core.util;
+package cn.crtlprototypestudios.sms.core_from_tkisor.util;
 
-import cn.crtlprototypestudios.sms.core.config.ModConfig;
-import cn.crtlprototypestudios.sms.core.task.MemoryUsageTask;
+import cn.crtlprototypestudios.sms.core_from_tkisor.config.ModConfig;
+import cn.crtlprototypestudios.sms.core_from_tkisor.task.MemoryUsageTask;
 import net.minecraft.util.Language;
 
 import java.lang.management.ManagementFactory;
@@ -14,10 +14,10 @@ import java.util.concurrent.CountDownLatch;
 public class GCUtil {
     private final DecimalFormat df = new DecimalFormat("#.0");
     private final Language language = Language.getInstance();
-    private final String smartGCStartText = language.get("memorysweep.gc.start");
-    private final String smartGCEndText = language.get("memorysweep.gc.end");
+    private final String smartGCStartText = language.get("sms.gc.start");
+    private final String smartGCEndText = language.get("sms.gc.end");
     private String smartGCCauseText = "null";
-    private final String smartGCFailedText = language.get("memorysweep.gc.failed");
+    private final String smartGCFailedText = language.get("sms.gc.failed");
     private double averageUsage = -1;
     private boolean isGC = false;
 
@@ -49,7 +49,7 @@ public class GCUtil {
         }
 
         if (hasJvmParam("-XX:+UseZGC")) {
-            smartGCCauseText = language.get("memorysweep.gc.failed.cause.is-zgc");
+            smartGCCauseText = language.get("sms.gc.failed.cause.is-zgc");
             isGC = false;
             latch.countDown();
             return;
@@ -62,13 +62,13 @@ public class GCUtil {
 //            return;
 //        }
 
-        if (usageMaxGB < 2.0 || usageFreeGB < 0.5) {
+        if (usageMaxGB < 2.0 || usageFreeGB < 1.0) {
             gc();
             latch.countDown();
             return;
         }
 
-        if (memoryUsage > 0.9) {
+        if (memoryUsage > 0.8) {
             gc();
             latch.countDown();
             return;
@@ -88,7 +88,7 @@ public class GCUtil {
         if (averageUsage > ModConfig.get().baseCfg.minMemoryUsage/100.0) {
             gc();
         } else {
-            smartGCCauseText = language.get("memorysweep.gc.failed.cause.not-gc");
+            smartGCCauseText = language.get("sms.gc.failed.cause.not-gc");
             isGC = false;
         }
         timer.cancel(); // 取消定时器

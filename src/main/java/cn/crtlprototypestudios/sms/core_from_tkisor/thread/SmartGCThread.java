@@ -1,6 +1,6 @@
-package cn.crtlprototypestudios.sms.core.thread;
+package cn.crtlprototypestudios.sms.core_from_tkisor.thread;
 
-import cn.crtlprototypestudios.sms.core.util.GCUtil;
+import cn.crtlprototypestudios.sms.core_from_tkisor.util.GCUtil;
 
 import java.util.concurrent.CountDownLatch;
 

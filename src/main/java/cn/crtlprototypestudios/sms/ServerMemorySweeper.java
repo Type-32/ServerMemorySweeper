@@ -1,5 +1,6 @@
 package cn.crtlprototypestudios.sms;
 
+import cn.crtlprototypestudios.sms.core_from_tkisor.SweeperCore;
 import net.fabricmc.api.ModInitializer;
 
 public class ServerMemorySweeper implements ModInitializer {
@@ -8,6 +9,7 @@ public class ServerMemorySweeper implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
+        SweeperCore.init();
     }
+
 }
