@@ -1,7 +1,9 @@
 package cn.crtlprototypestudios.sms;
 
 import cn.crtlprototypestudios.sms.core_from_tkisor.SweeperCore;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 public class ServerMemorySweeper implements ModInitializer {
 
@@ -10,6 +12,10 @@ public class ServerMemorySweeper implements ModInitializer {
     @Override
     public void onInitialize() {
         SweeperCore.init();
+//        CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> dispatcher.register(LiteralArgumentBuilder.literal("smsweep")
+//                .executes(context -> {
+//
+//                }))));
     }
 
 }
