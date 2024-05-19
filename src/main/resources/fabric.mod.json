@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "sms",
+  "version": "${version}",
+  "name": "ServerMemorySweeper",
+  "description": "A RAM sweeper for Minecraft Servers",
+  "authors": [
+    "Type-32"
+  ],
+  "contact": {
+    "website": "crtl-prototype-studios.cn",
+    "repo": "https://github.com/Type-32/ServerMemorySweeper"
+  },
+  "license": "MIT",
+  "icon": "assets/sms/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "client": [
+      "cn.crtlprototypestudios.sms.client.ServerMemorySweeperClient"
+    ],
+    "main": [
+      "cn.crtlprototypestudios.sms.ServerMemorySweeper"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
